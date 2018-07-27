@@ -1,0 +1,39 @@
+/*
+This file illustrates how to run and test the simple 
+echo server-client program
+*/
+
+ROLE OF ASSIGNMENT COMPLETION:
+This project aims to complete a simple server client system using socket programming. 
+In this case, Yinan is responsible for designing a robust server with multithreading using fork; 
+Liuyi's role is mainly program an available client for the echoing processes.
+
+ARCHITECTURE:
+this program assignment consists of two parts: server and client
+server:
+in server.c file, we have functions writen() which writes n bytes to a socket and echo() which calls writen() to send messages back.
+The server reads messages from the client and then echoes messages back to the client.
+It also supports multiple simultaneous connections.
+client:
+in client.C file, we have a master thread always reading command/messages from commandline, 
+and then it will send it to our server, that's server.c file. After that, the client would print it out.
+Also, it should satisfy the test case requirements.
+
+
+USAGE:
+1. compile client.C and server.C files
+make
+
+2. run the server first
+./server 	(there should be something shown like "server now is ready to connect...")
+
+3. run the client secondly
+./client
+echo 127.0.0.1 6001	(the designated port is 6001)
+
+4. if the client and server connect successfully, we could see something shown on the client terminal side:
+client:connecting to 127.0.0.1
+Welcome to our echo client.
+client:
+
+5. now echo begins, you could refer to the report to see the exact responses.

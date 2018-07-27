@@ -1,0 +1,49 @@
+/*
+This instruction shows how to run and test the Trivial File Transfer Protocol (TFTP)
+*/
+
+
+
+ROLE OF ASSIGNMENT COMPLETION:
+This project aims to complete a Trivial File Transfer Protocol (TFTP) using socket programming.
+In this case,
+Yinan is responsible for implementing the send packets function of the server
+Liuyi is responsible for implementing the request and acknowledge function of the client
+
+
+
+ARCHITECTURE:
+This program assignment consists: TFTP_Server.c
+Server:
+The server binds the input <ip_address> and <port_no.> to listen to new client requests.
+When the server receives a new client request, the random function generator will create a new socket.
+The file will be sent in 512-bytes blocks to clients.
+The server sequentially sends each 512-bytes blocks of packets and waits for acknowledgements from the client.
+After all packets of the file is sent to the client, the transmission is ended.
+
+
+
+USAGE:
+1. compile TFTP_Server.c
+make
+
+2. run the server first
+./Server <server_ip_address> <port_no.>
+you should see:
+Socket opened successfully!
+Bind successfully!
+
+3. then run the client
+tftp <server_ip_address> <port_no.>
+you should see:
+tftp>
+
+4. now the Trivial File Transfer Protocol (TFTP) is established
+
+
+
+TEST CASES:
+(1) 1_2048
+(2) 2_2047
+(3) 3_2CR.txt
+(4) 4_large.pdf

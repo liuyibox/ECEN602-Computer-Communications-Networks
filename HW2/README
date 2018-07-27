@@ -1,0 +1,39 @@
+/*
+This file illustrates how to run and test the TCP Simple Broadcast Chat Server and Client
+*/
+
+
+ROLE OF ASSIGNMENT COMPLETION:
+This project aims to complete a TCP Simple Broadcast Chat Server and Client system using socket programming.
+In this case, Yinan is responsible for developing the client and test cases;
+              Liuyi is responsible for implementing the server.
+
+
+ARCHITECTURE:
+This program assignment consists of two parts: server, client
+server:
+in server.c file, we have sendACK(), sendNAK(), which can confirm or reject requests from clients
+username_check(), which can check if the client name already exists;
+connection_check(), which can check if the number of clients exceed limits.
+
+client:
+in client.c file, we have
+getServerMessage(), which can get message from the server such as ACK, NAK, ONLINE and OFFLINE;
+join(), which can initiate a JOIN with the server;
+chat(), which can send messages to server and broadcast to other clients.
+
+
+USAGE:
+1. compile server.c, client.c
+make
+
+2. run the server first
+./Server <server_ip_address> <port_no.> <max_clients>
+
+3. run the client secondly
+./Client <username> <server_ip_address> <port_no.>
+you should see
+client: connecting to 127.0.0.1
+connected to the server..
+
+4. now the TCP Simple Broadcast Chat Server and Client is established
